@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "v14.15.0"
+  },
   "name": "members-only",
   "version": "0.0.0",
   "private": true,
