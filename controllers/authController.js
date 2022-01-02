@@ -33,13 +33,14 @@ exports.login_get = (req, res, next) => {
   res.render("login", {
     user: req.user,
     authType: "Log in",
+    err: null
   });
 };
 
 exports.login_post = (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/",
+    failureRedirect: res.render("login", {err: "username or password doesnot match", user: null, authType: "Log in"})
   })(req, res, next);
 };
 

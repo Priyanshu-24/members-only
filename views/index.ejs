@@ -8,10 +8,8 @@
 
     <%- include("header")%>
 
-    <div class="">
-      <% if (user){ %>
-      <div class="">Hello <%= user.username %>!</div>
-      <%}%> <% msgs.forEach(msg => { %> <%- include("message", {msg: msg}) %> <%
+    <div class="content">
+     <% msgs.forEach(msg => { %> <%- include("message", {msg: msg}) %> <%
       }) %>
     </div>
 
