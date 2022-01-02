@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Members Only</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <%- include("header")%>
+
+    <div class="">
+      <% if (user){ %>
+      <div class="">Hello <%= user.username %>!</div>
+      <%}%> <% msgs.forEach(msg => { %> <%- include("message", {msg: msg}) %> <%
+      }) %>
+    </div>
+
   </body>
 </html>
