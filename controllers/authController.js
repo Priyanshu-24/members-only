@@ -11,6 +11,7 @@ exports.signup_get = (req, res, next) => {
 };
 
 exports.signup_post = (req, res, next) => {
+
   bcrypt.hash(req.body.password, 10, (err, hashPassword) => {
     if (err) {
       return next(err);
@@ -40,7 +41,7 @@ exports.login_get = (req, res, next) => {
 exports.login_post = (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: res.render("login", {err: "username or password doesnot match", user: null, authType: "Log in"})
+    failureRedirect: "/",
   })(req, res, next);
 };
 
